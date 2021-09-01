@@ -7,10 +7,15 @@
     <noscript>
       <p>Java Scriptを有効にしてください。</p>
     </noscript>
+
+       function hyouji()
+  {
+   
+  }
     
 <body>
   <div class="game">
-    <p>得点:<span id="score">0</span>&emsp;レベル:<span id="level">1</span></p>
+    <p>得点:<span id="score">0</span></p>
 
     <div class="slot">
         <div id="slot0">2</div>
@@ -34,7 +39,6 @@
   // 即時関数で囲っておく（スコープを限定）
     (function(){
       var score = 0; // 得点
-      var level = 1; // レベル
       var interval = 400; // スロットのスピード
       var timers = []; // スロット
       var results = []; // スロットを止めた時の数字
@@ -120,18 +124,15 @@
 
         // 3つの数字が同じであれば次へ、そうでなければGAMEOVER
         if (results[0] == results[1] && results[0] == results[2]) {
-          alert('すごい！100点獲得！次のレベルに挑戦してね！');
 
           score += 100; // 得点を足す
-          level += 1;
           interval *= 0.8; // スロットのスピードを早める
           // 得点追加の処理
           getScore();
           // 次のゲームに進む
           startSlot();
-        } else {
-          gameover();
-        }
+        }else{
+           gameluse
       }
 
       // 得点追加時の処理
@@ -141,8 +142,8 @@
       }
 
       // 揃えられなかった時
-      function gameover() {
-        alert('ゲームオーバー... またチャレンジしてね！');
+      function gameluse() {
+        
       }
 
       document.getElementById('reset').onclick = function() {
